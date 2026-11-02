@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Streaming Gear Budget Builder ($100 to $1,000+) | StreamGearLab</title>
+  <meta name="description" content="Free streaming gear budget planner. Set a budget from $100 to $1,000+, pick audio, video or lighting as your priority and room type, and get a category-level setup." />
+  <link rel="canonical" href="https://streamgearlab.com/tools/streaming-gear-budget-builder/" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div class="inner">
+      <a class="brand" href="https://streamgearlab.com/"><img src="icon.svg" alt="" width="32" height="32" />StreamGearLab</a>
+      <a class="live-link" href="https://streamgearlab.com/tools/streaming-gear-budget-builder/">Use the live tool on streamgearlab.com →</a>
+    </div>
+  </header>
+  <main class="tool-page">
+    <header class="article-header tool-head">
+      <h1>Streaming Gear Budget Builder</h1>
+      <p class="lead">Set your budget and priorities and get a category-by-category streaming setup that fits your room, with approximate price ranges for planning.</p>
+      <p class="meta">Free, runs entirely in your browser, nothing is uploaded · Rules checked November 1, 2026</p>
+    </header>
+    <noscript><p class="notice">This tool needs JavaScript. The explanation below still works without it.</p></noscript>
+    <section class="tool-card" aria-label="Streaming Gear Budget Builder tool">
+
+  <form id="gear-form" class="tool-form" novalidate>
+    <div class="field span-2">
+      <label for="budget">Total budget: <span class="range-value" id="budget-out">$300</span></label>
+      <input id="budget" name="budget" type="range" min="100" max="2000" step="25" value="300" aria-describedby="budget-hint" />
+      <p class="hint" id="budget-hint">Drag, or pick a tier:</p>
+      <div class="choices" role="group" aria-label="Budget presets">
+        <button type="button" class="btn ghost small" data-b="100">$100</button>
+        <button type="button" class="btn ghost small" data-b="300">$300</button>
+        <button type="button" class="btn ghost small" data-b="600">$600</button>
+        <button type="button" class="btn ghost small" data-b="1000">$1,000</button>
+        <button type="button" class="btn ghost small" data-b="2000">$2,000+</button>
+      </div>
+    </div>
+    <fieldset class="field span-2">
+      <legend>What matters most?</legend>
+      <div class="choices">
+        <label class="choice"><input type="radio" name="prio" value="balanced" checked /><span>Balanced</span></label>
+        <label class="choice"><input type="radio" name="prio" value="audio" /><span>Audio</span></label>
+        <label class="choice"><input type="radio" name="prio" value="video" /><span>Video / camera</span></label>
+        <label class="choice"><input type="radio" name="prio" value="lighting" /><span>Lighting</span></label>
+      </div>
+    </fieldset>
+    <div class="field">
+      <label for="room">Your room</label>
+      <select id="room" name="room">
+        <option value="normal">Ordinary bedroom/office (some furniture)</option>
+        <option value="echo">Echoey (bare walls, hard floor, little furniture)</option>
+        <option value="noisy">Noisy or shared (family, traffic, roommates)</option>
+        <option value="dark">Dark (no window or mostly night streams)</option>
+        <option value="window">Bright window nearby</option>
+        <option value="treated">Quiet and acoustically treated</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="cam">Face cam?</label>
+      <select id="cam" name="cam">
+        <option value="yes">Yes, I'll show my face</option>
+        <option value="no">No, voice only (VTuber / screen only)</option>
+      </select>
+    </div>
+    <fieldset class="field span-2">
+      <legend>Already own (skip these)</legend>
+      <div class="choices">
+        <label class="check"><input type="checkbox" name="own" value="webcam" /> <span>Decent webcam</span></label>
+        <label class="check"><input type="checkbox" name="own" value="camera" /> <span>Mirrorless/DSLR camera</span></label>
+        <label class="check"><input type="checkbox" name="own" value="headphones" /> <span>Closed-back headphones</span></label>
+      </div>
+    </fieldset>
+    <div class="tool-actions span-2"><button class="btn" type="submit">Build my setup</button></div>
+  </form>
+  <div id="gear-results" class="results" aria-live="polite"></div>
+    </section>
+    <div class="reading-inner prose">
+<h2>How the budget builder plans your setup</h2>
+<p>The builder works at the category level. It doesn't tell you to buy one particular microphone. It tells you what <em>kind</em> of microphone, light and camera gives you the most improvement for your budget. It then gives a rough price range for that kind of gear so you can plan. Prices change every week, so the ranges are approximate and only meant for planning. Always check current prices at a few retailers before you buy.</p>
+<p>It starts from the cheapest setup that works: a USB dynamic mic, a lamp or window light, and the webcam or phone camera you already own. Then it spends the rest of your budget in upgrade steps. Your priority category climbs first, using up to about two-thirds of the budget, and then gets two upgrade chances per round to the others' one. In an ordinary room, a $300 audio-first plan therefore ends up with an XLR mic and interface, while a $300 balanced plan spreads the money across a better USB mic, a key light and a 1080p webcam.</p>
+<h3>Why audio usually comes first</h3>
+<p>People will sit through a soft image, but harsh, echoey or noisy audio makes them leave. A dynamic mic placed a few centimetres from your mouth picks up much less room sound than a condenser on the far side of the desk. Shure's own explainer gives that as the main practical difference. That's why the builder suggests dynamic mics unless you tell it your room is quiet and treated. If you're stuck between USB and XLR, read our <a href="https://streamgearlab.com/guides/usb-vs-xlr-microphones-for-streaming/">USB vs XLR guide</a>.</p>
+<h3>Light before lens</h3>
+<p>Webcam sensors are small, and in dim light they get grainy and smeary. One soft key light at about 45° in front of you often does more for image quality than a more expensive webcam. A fill light and a backlight come next. Our <a href="https://streamgearlab.com/guides/budget-streaming-lighting-small-room/">small-room lighting guide</a> shows the placement. A mirrorless camera only appears in the plan once the budget covers the camera and the extras it needs, such as a capture card and a dummy battery. Our <a href="https://streamgearlab.com/guides/webcam-vs-mirrorless-camera-for-streaming/">webcam vs mirrorless guide</a> explains the trade-off.</p>
+<h3>Room type matters</h3>
+<p>Room type changes the plan:</p>
+<ul>
+  <li><strong>Echoey room:</strong> adds soft furnishings, such as a rug, heavy curtains or blankets, before a more sensitive mic.</li>
+  <li><strong>Noisy room:</strong> keeps you on a close dynamic mic and points you to OBS's free noise suppression filter, covered in our <a href="https://streamgearlab.com/guides/reduce-background-noise-in-obs/">background noise guide</a>.</li>
+  <li><strong>Dark room:</strong> moves a real key light up the list.</li>
+</ul>
+      <h2 id="faq">Frequently asked questions</h2>
+      <div class="faq">
+      <details>
+        <summary>What should I buy first for streaming?</summary>
+        <p>For most people, a microphone. Viewers forgive a soft webcam image much more readily than muddy or echoey audio. After the mic, a single soft key light usually improves a webcam more than upgrading the webcam itself.</p>
+      </details>
+      <details>
+        <summary>Can I start streaming with a $100 budget?</summary>
+        <p>Yes. Put most of it into a USB dynamic microphone, use a daylight lamp or window light, and use your phone or existing webcam as the camera. Add a light and a dedicated webcam later.</p>
+      </details>
+      <details>
+        <summary>Is a mirrorless camera worth it for streaming?</summary>
+        <p>Only once audio and lighting are sorted, and usually only on budgets around $1,000 or more. A camera also needs a capture card or clean HDMI output and a dummy battery for long streams, and those add to the cost.</p>
+      </details>
+      <details>
+        <summary>Are the prices in this tool exact?</summary>
+        <p>No. They are approximate ranges for typical new gear in each category, meant for planning a budget. Prices vary by retailer, region and sales, so check current prices before you buy.</p>
+      </details>
+      <details>
+        <summary>Why does room type change the recommendation?</summary>
+        <p>An echoey room with bare walls makes sensitive condenser microphones sound distant, so the tool steers you to a dynamic mic and soft furnishings. A dark room needs a key light before anything else, and a noisy shared space benefits most from a close-placed dynamic mic and noise suppression.</p>
+      </details>
+      </div>
+    </div>
+    <aside class="sources reading-inner">
+      <h2>Sources</h2>
+      <p class="small muted">The rules in this tool are based on these official pages, checked November 1, 2026. Platforms change their guidance; if a number here disagrees with the official page, the official page wins.</p>
+      <ul>
+      <li><a href="https://service.shure.com/articles/en_US/Knowledge/difference-between-a-dynamic-and-condenser-microphone" rel="noopener" target="_blank">Shure – Difference between a dynamic and condenser microphone</a></li>
+      <li><a href="https://obsproject.com/kb/noise-suppression-filter" rel="noopener" target="_blank">OBS Knowledge Base – Noise Suppression filter</a></li>
+      </ul>
+    </aside>
+  </main>
+  <footer class="page-footer">
+    <p>Made by <a href="https://streamgearlab.com/">StreamGearLab</a>, plain-English guides and free tools for streamers. Live version: <a href="https://streamgearlab.com/tools/streaming-gear-budget-builder/">https://streamgearlab.com/tools/streaming-gear-budget-builder/</a></p>
+    <p>Open source under the MIT License.</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
